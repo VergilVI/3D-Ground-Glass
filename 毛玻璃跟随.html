@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>半透明3d毛玻璃</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-attachment: fixed;
+            background-image: url(../img/img11.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: 50%, 0%;
+            background-color: rgb(22, 55, 85);
+            overflow-x: hidden;
+        }
+
+        ul {
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            height: 100vh;
+            justify-content: space-evenly;
+            overflow: auto;
+            width: 100vw;
+        }
+
+        ul li {
+            float: left;
+            width: 180px;
+            padding: 19px;
+            list-style: none;
+            background-color: #fff;
+            color: rgb(32, 40, 48);
+            font-size: 14px;
+            transition: 500ms all ease;
+            margin: 30px 20px;
+        }
+
+        ul li h4 {
+            color: white;
+            height: 40px;
+            margin-bottom: 15px;
+            line-height: 40px;
+            font-size: 16px;
+            text-align: center;
+            border-bottom: 1px solid rgba(223, 231, 239, .7);
+        }
+
+        ul li p {
+            color: white;
+            text-align: center;
+        }
+
+        ul li p.btn a {
+            display: inline-block;
+            padding: 10px 40px;
+            margin-top: 15px;
+            text-shadow: 0 1px 1px rgba(32, 40, 48, .8);
+            text-decoration: none;
+            color: #fff;
+            background-color: rgb(229, 195, 85);
+            background-image: linear-gradient(left top, left bottom, rgb(229, 195, 85), rgb(187, 160, 71));
+            border-radius: 8px;
+        }
+
+        ul li p.btn-orange a {
+            background-color: rgb(218, 109, 14);
+            background-image: linear-gradient(left top, left bottom, rgb(255, 153, 0), rgb(190, 75, 26));
+        }
+
+        ul li p.btn-red a {
+            background-color: rgb(188, 72, 72);
+            background-image: linear-gradient(left top, left bottom, rgb(188, 72, 72), rgb(126, 49, 49));
+        }
+
+        ul li p.btn-purple a {
+            background-color: rgb(122, 104, 166);
+            background-image: linear-gradient(left top, left bottom, rgb(122, 104, 166), rgb(91, 78, 127));
+        }
+
+        ul li p.btn a:hover {
+            box-shadow: 0 -1px 10px rgba(0, 0, 0, .5);
+        }
+
+        ul li.afterTransfor {
+            background-color: transparent;
+            border: none;
+            padding: 0px;
+            perspective: 500px;
+            width: 218px;
+        }
+
+        ul li.afterTransfor>.trans-box {
+            backdrop-filter: blur(3px);
+            background-color: rgba(255, 255, 255, .1);
+            background-image: radial-gradient(circle farthest-side at 0% 230%, rgba(255, 255, 255, .5), transparent 80%);
+
+            border-radius: 20px;
+            overflow: hidden;
+            padding: 19px;
+            position: relative;
+            transition: transform 0.2s linear;
+            height: 310px;
+            width: 180px;
+            z-index: 1;
+        }
+
+        ul li.afterTransfor>.trans-box>div {
+            opacity: 0;
+            position: relative;
+            pointer-events: none;
+            transition-property: transform, opacity;
+            transition-duration: .6s, .6s;
+            transition-timing-function: linear, linear;
+            transform: translateY(60%);
+        }
+
+        ul li.afterTransfor>.trans-box:hover>div {
+            opacity: 1;
+            transform: translateY(0%);
+        }
+
+        ul li.afterTransfor>.trans-box>div>h2 {
+            color: rgba(255, 255, 255, .2);
+            font-size: 80px;
+            filter: blur(2px);
+            position: absolute;
+            top: -5%;
+            right: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li class="afterTransfor">
+            <div class="trans-box" onmouseenter="addMousePosFunc(this)" onmouseleave="delMousePosFunc(this)">
+                <div class="content">
+                    <h2>01</h2>
+                    <h4>what?</h4>
+                    <p>If you want to sell sugar water for the rest of my life or want a chance to change the world</p>
+                    <p>If you want to sell sugar water for the rest of my life or want a chance to change the world</p>
+                    <p>@chic</p>
+                    <p class="btn"><a href="">you see?<br>Yes I see!</a></p>
+                </div>
+            </div>
+        </li>
+        <li class="afterTransfor">
+            <div class="trans-box" onmouseenter="addMousePosFunc(this)" onmouseleave="delMousePosFunc(this)">
+                <div class="content">
+                    <h2>02</h2>
+                    <h4>what?</h4>
+                    <p>If you want to sell sugar water for the rest of my life or want a chance to change the world</p>
+                    <p>If you want to sell sugar water for the rest of my life or want a chance to change the world</p>
+                    <p>@chic</p>
+                    <p class="btn btn-orange"><a href="">you see?<br>Yes I see!</a></p>
+                </div>
+            </div>
+        </li>
+        <li class="afterTransfor">
+            <div class="trans-box" onmouseenter="addMousePosFunc(this)" onmouseleave="delMousePosFunc(this)">
+                <div class="content">
+                    <h2>03</h2>
+                    <h4>what?</h4>
+                    <p>If you want to sell sugar water for the rest of my life or want a chance to change the world</p>
+                    <p>If you want to sell sugar water for the rest of my life or want a chance to change the world</p>
+                    <p>@chic</p>
+                    <p class="btn btn-red"><a href="">you see?<br>Yes I see!</a></p>
+                </div>
+            </div>
+        </li>
+        <li class="afterTransfor">
+            <div class="trans-box" onmouseenter="addMousePosFunc(this)" onmouseleave="delMousePosFunc(this)">
+                <div class="content">
+                    <h2>04</h2>
+                    <h4>what?</h4>
+                    <p>If you want to sell sugar water for the rest of my life or want a chance to change the world</p>
+                    <p>If you want to sell sugar water for the rest of my life or want a chance to change the world</p>
+                    <p>@chic</p>
+                    <p class="btn btn-purple"><a href="">you see?<br>Yes I see!</a></p>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+</body>
+
+<script>
+    function addMousePosFunc(ele) {
+        ele.onmousemove = mousePos.bind(ele);
+        for (let item of ele.children) {
+            item.onmousemove = mousePos.bind(ele);
+        }
+    }
+
+    function delMousePosFunc(ele) {
+        ele.onmousemove = null;
+        ele.style.transform = null;
+        ele.style.boxShadow = null;
+        ele.style.backgroundImage = null;
+    }
+
+    function mousePos() {
+        let posX = 0, posY = 0;//鼠标相对元素的坐标
+        let event = window.event;
+        let ele = event.target;//触发元素的对象
+        if (ele != this) return;//阻止子元素触发方法
+        let eleWidth = ele.offsetWidth, eleHeight = ele.offsetHeight;//元素实际的宽和高
+
+        //获取鼠标相对于当前元素的坐标位置
+        if (event.offsetX || event.offsetY) {
+            posX = event.offsetX;
+            posY = event.offsetY;
+        }
+        else if (event.pageX || event.pageY) {
+            posX = event.pageX;
+            posY = event.pageY;
+        }
+        else if (event.clientX || event.clientY) {
+            posX = event.clientX + document.documentElement.scrollLeft + document.boday.scrollLeft;
+            posY = event.clientY + document.documentElement.scrollTop + document.boday.scrollTop;
+        }
+
+        // 设计元素跟随鼠标作3d旋转
+        let transY = (posY / eleHeight * 2 - 1);
+        let transX = (posX / eleWidth * -2 + 1);
+        ele.style.transform = `rotateX(${transY * 25}deg) rotateY(${transX * 25}deg)`;
+
+        // 设计元素阴影跟随鼠标显现
+        let shadowY;
+        if (posY < eleHeight / 2)
+            shadowY = (2 - posY * 2 / eleHeight);
+        else
+            shadowY = -(posY * 2 / eleHeight);
+
+        let shadowX = (2 - posX / eleWidth * 4);
+        if (posX < eleWidth / 2)
+            shadowX = (2 - posX * 2 / eleWidth);
+        else
+            shadowX = -(posX * 2 / eleWidth);
+        ele.style.boxShadow = `${shadowX}px ${shadowY}px 0px -1px rgba(255,255,255,.5) inset`;
+
+        //设计元素跟随鼠标打光的效果
+        let percentX = posX / eleWidth * 100;
+        let percentY = (2.3 - posY / eleHeight) * 100;
+        ele.style.backgroundImage = `radial-gradient(circle farthest-side at ${percentX}% ${percentY}%, rgba(255, 255, 255, .5), transparent 80%)`;
+
+    }
+</script>
+
+</html>
