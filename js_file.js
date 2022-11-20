@@ -21,6 +21,7 @@ function mousePos() {
   let eleWidth = ele.offsetWidth,
     eleHeight = ele.offsetHeight; //元素实际的宽和高
 
+    
   //获取鼠标相对于当前元素的坐标位置
   if (event.offsetX || event.offsetY) {
     posX = event.offsetX;
@@ -33,10 +34,12 @@ function mousePos() {
     posY = event.clientY + document.documentElement.scrollTop + document.boday.scrollTop;
   }
 
+
   // 设计元素跟随鼠标作3d旋转
   let transY = (posY / eleHeight) * 2 - 1;
   let transX = (posX / eleWidth) * -2 + 1;
   ele.style.transform = `rotateX(${transY * 25}deg) rotateY(${transX * 25}deg)`;
+
 
   // 设计元素阴影跟随鼠标显现
   let shadowY;
@@ -48,6 +51,7 @@ function mousePos() {
   else shadowX = -((posX * 2) / eleWidth);
   ele.style.boxShadow = `${shadowX}px ${shadowY}px 0px -1px rgba(255,255,255,.5) inset`;
 
+  
   //设计元素跟随鼠标打光的效果
   let percentX = (posX / eleWidth) * 100;
   let percentY = (2.3 - posY / eleHeight) * 100;
