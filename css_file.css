@@ -52,7 +52,6 @@ ul li h4 {
 ul li p {
     color: white;
     text-align: center;
-    /* text-indent: 2em; */
 }
 
 ul li p.btn a {
@@ -62,9 +61,7 @@ ul li p.btn a {
     text-shadow: 0 1px 1px rgba(32, 40, 48, .8);
     text-decoration: none;
     color: #fff;
-    /* background-color: rgb(229, 195, 85); */
     background-color: var(--bClr);
-    /* background-image: linear-gradient(left top, left bottom, rgb(229, 195, 85), rgb(187, 160, 71)); */
     border-radius: 8px;
 }
 
@@ -96,13 +93,13 @@ ul li.afterTransfor>.trans-box {
 }
 
 ul li.afterTransfor>.trans-box>div {
-    /* opacity: 0; */
+    opacity: 0;
     position: relative;
     pointer-events: none;
     transition-property: transform, opacity;
     transition-duration: .6s, .6s;
     transition-timing-function: linear, linear;
-    /* transform: translateY(60%); */
+    transform: translateY(60%);
 }
 
 ul li.afterTransfor>.trans-box:hover>div {
